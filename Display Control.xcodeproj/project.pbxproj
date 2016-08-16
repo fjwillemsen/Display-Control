@@ -1,0 +1,533 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5E0F67C81CEF43660057B4D6 /* displayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0F67C61CEF43660057B4D6 /* displayViewController.swift */; };
+		5E0F67C91CEF43660057B4D6 /* displayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E0F67C71CEF43660057B4D6 /* displayViewController.xib */; };
+		5E4565351D63CF740063D049 /* displayViewControllerExtender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4565341D63CF740063D049 /* displayViewControllerExtender.swift */; };
+		5ED918991CEDFC2F002FEFB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED918981CEDFC2F002FEFB1 /* AppDelegate.swift */; };
+		5ED9189B1CEDFC2F002FEFB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED9189A1CEDFC2F002FEFB1 /* Assets.xcassets */; };
+		5ED9189E1CEDFC2F002FEFB1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED9189C1CEDFC2F002FEFB1 /* MainMenu.xib */; };
+		5ED918A91CEDFC2F002FEFB1 /* MenuBarAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED918A81CEDFC2F002FEFB1 /* MenuBarAppTests.swift */; };
+		5ED918B41CEDFC2F002FEFB1 /* MenuBarAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED918B31CEDFC2F002FEFB1 /* MenuBarAppUITests.swift */; };
+		5EF7AE651D096A6300D21A9F /* dependencyInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF7AE641D096A6300D21A9F /* dependencyInstaller.swift */; };
+		5EF7CEC81CF4A0C200DD9737 /* displayViewControllerVertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF7CEC61CF4A0C200DD9737 /* displayViewControllerVertical.swift */; };
+		5EF7CEC91CF4A0C200DD9737 /* displayViewControllerVertical.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EF7CEC71CF4A0C200DD9737 /* displayViewControllerVertical.xib */; };
+		5EF7CED81CF4C26500DD9737 /* preferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF7CED61CF4C26500DD9737 /* preferencesViewController.swift */; };
+		5EF7CED91CF4C26500DD9737 /* preferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EF7CED71CF4C26500DD9737 /* preferencesViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5ED918A51CEDFC2F002FEFB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5ED9188D1CEDFC2F002FEFB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5ED918941CEDFC2F002FEFB1;
+			remoteInfo = MenuBarApp;
+		};
+		5ED918B01CEDFC2F002FEFB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5ED9188D1CEDFC2F002FEFB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5ED918941CEDFC2F002FEFB1;
+			remoteInfo = MenuBarApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5E0F67C61CEF43660057B4D6 /* displayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = displayViewController.swift; sourceTree = "<group>"; };
+		5E0F67C71CEF43660057B4D6 /* displayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = displayViewController.xib; sourceTree = "<group>"; };
+		5E4565341D63CF740063D049 /* displayViewControllerExtender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = displayViewControllerExtender.swift; sourceTree = "<group>"; };
+		5ED918951CEDFC2F002FEFB1 /* Display Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Display Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ED918981CEDFC2F002FEFB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5ED9189A1CEDFC2F002FEFB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5ED9189D1CEDFC2F002FEFB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5ED9189F1CEDFC2F002FEFB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5ED918A41CEDFC2F002FEFB1 /* Display Control.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Display Control.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ED918A81CEDFC2F002FEFB1 /* MenuBarAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarAppTests.swift; sourceTree = "<group>"; };
+		5ED918AA1CEDFC2F002FEFB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5ED918AF1CEDFC2F002FEFB1 /* Display Control.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Display Control.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ED918B31CEDFC2F002FEFB1 /* MenuBarAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarAppUITests.swift; sourceTree = "<group>"; };
+		5ED918B51CEDFC2F002FEFB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EF7AE641D096A6300D21A9F /* dependencyInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dependencyInstaller.swift; sourceTree = SOURCE_ROOT; };
+		5EF7CEC61CF4A0C200DD9737 /* displayViewControllerVertical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = displayViewControllerVertical.swift; path = ../displayViewControllerVertical.swift; sourceTree = "<group>"; };
+		5EF7CEC71CF4A0C200DD9737 /* displayViewControllerVertical.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = displayViewControllerVertical.xib; path = ../displayViewControllerVertical.xib; sourceTree = "<group>"; };
+		5EF7CED61CF4C26500DD9737 /* preferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = preferencesViewController.swift; path = ../preferencesViewController.swift; sourceTree = "<group>"; };
+		5EF7CED71CF4C26500DD9737 /* preferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = preferencesViewController.xib; path = ../preferencesViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5ED918921CEDFC2F002FEFB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ED918A11CEDFC2F002FEFB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ED918AC1CEDFC2F002FEFB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5ED9188C1CEDFC2F002FEFB1 = {
+			isa = PBXGroup;
+			children = (
+				5ED918971CEDFC2F002FEFB1 /* MenuBarApp */,
+				5ED918A71CEDFC2F002FEFB1 /* MenuBarAppTests */,
+				5ED918B21CEDFC2F002FEFB1 /* MenuBarAppUITests */,
+				5ED918961CEDFC2F002FEFB1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5ED918961CEDFC2F002FEFB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5ED918951CEDFC2F002FEFB1 /* Display Control.app */,
+				5ED918A41CEDFC2F002FEFB1 /* Display Control.xctest */,
+				5ED918AF1CEDFC2F002FEFB1 /* Display Control.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5ED918971CEDFC2F002FEFB1 /* MenuBarApp */ = {
+			isa = PBXGroup;
+			children = (
+				5ED918981CEDFC2F002FEFB1 /* AppDelegate.swift */,
+				5EF7AE641D096A6300D21A9F /* dependencyInstaller.swift */,
+				5ED9189A1CEDFC2F002FEFB1 /* Assets.xcassets */,
+				5ED9189C1CEDFC2F002FEFB1 /* MainMenu.xib */,
+				5ED9189F1CEDFC2F002FEFB1 /* Info.plist */,
+				5E0F67C61CEF43660057B4D6 /* displayViewController.swift */,
+				5E0F67C71CEF43660057B4D6 /* displayViewController.xib */,
+				5EF7CEC61CF4A0C200DD9737 /* displayViewControllerVertical.swift */,
+				5EF7CEC71CF4A0C200DD9737 /* displayViewControllerVertical.xib */,
+				5EF7CED61CF4C26500DD9737 /* preferencesViewController.swift */,
+				5EF7CED71CF4C26500DD9737 /* preferencesViewController.xib */,
+				5E4565341D63CF740063D049 /* displayViewControllerExtender.swift */,
+			);
+			path = MenuBarApp;
+			sourceTree = "<group>";
+		};
+		5ED918A71CEDFC2F002FEFB1 /* MenuBarAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				5ED918A81CEDFC2F002FEFB1 /* MenuBarAppTests.swift */,
+				5ED918AA1CEDFC2F002FEFB1 /* Info.plist */,
+			);
+			path = MenuBarAppTests;
+			sourceTree = "<group>";
+		};
+		5ED918B21CEDFC2F002FEFB1 /* MenuBarAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5ED918B31CEDFC2F002FEFB1 /* MenuBarAppUITests.swift */,
+				5ED918B51CEDFC2F002FEFB1 /* Info.plist */,
+			);
+			path = MenuBarAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5ED918941CEDFC2F002FEFB1 /* Display Control */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5ED918B81CEDFC2F002FEFB1 /* Build configuration list for PBXNativeTarget "Display Control" */;
+			buildPhases = (
+				5ED918911CEDFC2F002FEFB1 /* Sources */,
+				5ED918921CEDFC2F002FEFB1 /* Frameworks */,
+				5ED918931CEDFC2F002FEFB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Display Control";
+			productName = MenuBarApp;
+			productReference = 5ED918951CEDFC2F002FEFB1 /* Display Control.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5ED918A31CEDFC2F002FEFB1 /* Display ControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5ED918BB1CEDFC2F002FEFB1 /* Build configuration list for PBXNativeTarget "Display ControlTests" */;
+			buildPhases = (
+				5ED918A01CEDFC2F002FEFB1 /* Sources */,
+				5ED918A11CEDFC2F002FEFB1 /* Frameworks */,
+				5ED918A21CEDFC2F002FEFB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5ED918A61CEDFC2F002FEFB1 /* PBXTargetDependency */,
+			);
+			name = "Display ControlTests";
+			productName = MenuBarAppTests;
+			productReference = 5ED918A41CEDFC2F002FEFB1 /* Display Control.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5ED918AE1CEDFC2F002FEFB1 /* Display ControlUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5ED918BE1CEDFC2F002FEFB1 /* Build configuration list for PBXNativeTarget "Display ControlUITests" */;
+			buildPhases = (
+				5ED918AB1CEDFC2F002FEFB1 /* Sources */,
+				5ED918AC1CEDFC2F002FEFB1 /* Frameworks */,
+				5ED918AD1CEDFC2F002FEFB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5ED918B11CEDFC2F002FEFB1 /* PBXTargetDependency */,
+			);
+			name = "Display ControlUITests";
+			productName = MenuBarAppUITests;
+			productReference = 5ED918AF1CEDFC2F002FEFB1 /* Display Control.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5ED9188D1CEDFC2F002FEFB1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Floris-Jan Willemsen";
+				TargetAttributes = {
+					5ED918941CEDFC2F002FEFB1 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					5ED918A31CEDFC2F002FEFB1 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 5ED918941CEDFC2F002FEFB1;
+					};
+					5ED918AE1CEDFC2F002FEFB1 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 5ED918941CEDFC2F002FEFB1;
+					};
+				};
+			};
+			buildConfigurationList = 5ED918901CEDFC2F002FEFB1 /* Build configuration list for PBXProject "Display Control" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5ED9188C1CEDFC2F002FEFB1;
+			productRefGroup = 5ED918961CEDFC2F002FEFB1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5ED918941CEDFC2F002FEFB1 /* Display Control */,
+				5ED918A31CEDFC2F002FEFB1 /* Display ControlTests */,
+				5ED918AE1CEDFC2F002FEFB1 /* Display ControlUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5ED918931CEDFC2F002FEFB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E0F67C91CEF43660057B4D6 /* displayViewController.xib in Resources */,
+				5ED9189B1CEDFC2F002FEFB1 /* Assets.xcassets in Resources */,
+				5EF7CED91CF4C26500DD9737 /* preferencesViewController.xib in Resources */,
+				5ED9189E1CEDFC2F002FEFB1 /* MainMenu.xib in Resources */,
+				5EF7CEC91CF4A0C200DD9737 /* displayViewControllerVertical.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ED918A21CEDFC2F002FEFB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ED918AD1CEDFC2F002FEFB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5ED918911CEDFC2F002FEFB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E4565351D63CF740063D049 /* displayViewControllerExtender.swift in Sources */,
+				5EF7AE651D096A6300D21A9F /* dependencyInstaller.swift in Sources */,
+				5ED918991CEDFC2F002FEFB1 /* AppDelegate.swift in Sources */,
+				5E0F67C81CEF43660057B4D6 /* displayViewController.swift in Sources */,
+				5EF7CEC81CF4A0C200DD9737 /* displayViewControllerVertical.swift in Sources */,
+				5EF7CED81CF4C26500DD9737 /* preferencesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ED918A01CEDFC2F002FEFB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ED918A91CEDFC2F002FEFB1 /* MenuBarAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ED918AB1CEDFC2F002FEFB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ED918B41CEDFC2F002FEFB1 /* MenuBarAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5ED918A61CEDFC2F002FEFB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5ED918941CEDFC2F002FEFB1 /* Display Control */;
+			targetProxy = 5ED918A51CEDFC2F002FEFB1 /* PBXContainerItemProxy */;
+		};
+		5ED918B11CEDFC2F002FEFB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5ED918941CEDFC2F002FEFB1 /* Display Control */;
+			targetProxy = 5ED918B01CEDFC2F002FEFB1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5ED9189C1CEDFC2F002FEFB1 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5ED9189D1CEDFC2F002FEFB1 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5ED918B61CEDFC2F002FEFB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Display Control";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "";
+			};
+			name = Debug;
+		};
+		5ED918B71CEDFC2F002FEFB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "Display Control";
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "";
+			};
+			name = Release;
+		};
+		5ED918B91CEDFC2F002FEFB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MenuBarApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Rebel.DisplayControl;
+				PRODUCT_NAME = "Display Control";
+			};
+			name = Debug;
+		};
+		5ED918BA1CEDFC2F002FEFB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MenuBarApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Rebel.DisplayControl;
+				PRODUCT_NAME = "Display Control";
+			};
+			name = Release;
+		};
+		5ED918BC1CEDFC2F002FEFB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MenuBarAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Rebel.MenuBarAppTests;
+				PRODUCT_NAME = "Display Control";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Display Control.app/Contents/MacOS/Display Control";
+			};
+			name = Debug;
+		};
+		5ED918BD1CEDFC2F002FEFB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MenuBarAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Rebel.MenuBarAppTests;
+				PRODUCT_NAME = "Display Control";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Display Control.app/Contents/MacOS/Display Control";
+			};
+			name = Release;
+		};
+		5ED918BF1CEDFC2F002FEFB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MenuBarAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Rebel.MenuBarAppUITests;
+				PRODUCT_NAME = "Display Control";
+				TEST_TARGET_NAME = MenuBarApp;
+			};
+			name = Debug;
+		};
+		5ED918C01CEDFC2F002FEFB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MenuBarAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Rebel.MenuBarAppUITests;
+				PRODUCT_NAME = "Display Control";
+				TEST_TARGET_NAME = MenuBarApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5ED918901CEDFC2F002FEFB1 /* Build configuration list for PBXProject "Display Control" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ED918B61CEDFC2F002FEFB1 /* Debug */,
+				5ED918B71CEDFC2F002FEFB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5ED918B81CEDFC2F002FEFB1 /* Build configuration list for PBXNativeTarget "Display Control" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ED918B91CEDFC2F002FEFB1 /* Debug */,
+				5ED918BA1CEDFC2F002FEFB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5ED918BB1CEDFC2F002FEFB1 /* Build configuration list for PBXNativeTarget "Display ControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ED918BC1CEDFC2F002FEFB1 /* Debug */,
+				5ED918BD1CEDFC2F002FEFB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5ED918BE1CEDFC2F002FEFB1 /* Build configuration list for PBXNativeTarget "Display ControlUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ED918BF1CEDFC2F002FEFB1 /* Debug */,
+				5ED918C01CEDFC2F002FEFB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5ED9188D1CEDFC2F002FEFB1 /* Project object */;
+}

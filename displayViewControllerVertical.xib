@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="displayViewControllerVertical" customModule="Display_Control" customModuleProvider="target">
+            <connections>
+                <outlet property="brightnessSlider" destination="K87-FR-fRy" id="YjS-9e-kfs"/>
+                <outlet property="contrastSlider" destination="lOC-tk-dIM" id="3In-zq-Ezz"/>
+                <outlet property="modelPicker" destination="XpO-us-dML" id="gDe-3C-U5K"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="volumeSlider" destination="QIg-dA-bcc" id="Hl5-pf-XAe"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="318"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wEC-LR-nGd">
+                    <rect key="frame" x="20" y="177" width="30" height="30"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Brightness" id="kOm-AK-hGH"/>
+                </imageView>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yMI-0g-81G">
+                    <rect key="frame" x="82" y="177" width="30" height="30"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Contrast" id="yiZ-gK-imW"/>
+                </imageView>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vnt-EA-vK8">
+                    <rect key="frame" x="144" y="177" width="30" height="30"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Volume" id="bJK-bn-SQg"/>
+                </imageView>
+                <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K87-FR-fRy">
+                    <rect key="frame" x="25" y="17" width="20" height="154"/>
+                    <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="nXM-l6-PJU"/>
+                    <connections>
+                        <action selector="brightnessSliderChanged:" target="-2" id="Ns4-WW-9kS"/>
+                    </connections>
+                </slider>
+                <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lOC-tk-dIM">
+                    <rect key="frame" x="87" y="17" width="25" height="154"/>
+                    <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" numberOfTickMarks="9" allowsTickMarkValuesOnly="YES" sliderType="linear" id="gqh-Qk-OwO"/>
+                    <connections>
+                        <action selector="contrastSliderChanged:" target="-2" id="Xbd-2J-ZYl"/>
+                    </connections>
+                </slider>
+                <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIg-dA-bcc">
+                    <rect key="frame" x="149" y="17" width="20" height="154"/>
+                    <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="cla-VS-HO2"/>
+                    <connections>
+                        <action selector="volumeSliderChanged:" target="-2" id="oVs-ZZ-kAe"/>
+                    </connections>
+                </slider>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XpO-us-dML">
+                    <rect key="frame" x="18" y="224" width="159" height="26"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="tIk-fe-WNA" id="TBG-gD-bKm">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="4Lh-hN-mob">
+                            <items>
+                                <menuItem state="on" id="tIk-fe-WNA"/>
+                                <menuItem title="Item 2" id="7PE-gL-8nx"/>
+                                <menuItem title="Item 3" id="sFa-qY-B24"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="displayPicked:" target="-2" id="bv2-b9-g9n"/>
+                    </connections>
+                </popUpButton>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qyj-JU-28u">
+                    <rect key="frame" x="144" y="266" width="30" height="32"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Exit" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Hiv-AT-GbI">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="quitButtonPressed:" target="-2" id="vGt-fs-eqj"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Oq-Le-Ftf">
+                    <rect key="frame" x="82" y="265" width="30" height="33"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Settings" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="AlW-KJ-Oiv">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="preferencesButtonPressed:" target="-2" id="HgD-Ki-vm5"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="223-CA-5wg">
+                    <rect key="frame" x="20" y="266" width="31" height="30"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Monitor Control Icon" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="d7n-gu-wm1">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="displayButtonPressed:" target="-2" id="UOI-E5-0Nr"/>
+                    </connections>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="276" y="404"/>
+        </customView>
+        <slider horizontalHuggingPriority="750" id="i4A-sR-uAH">
+            <rect key="frame" x="0.0" y="0.0" width="20" height="154"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="8Ri-lc-rFM"/>
+        </slider>
+    </objects>
+    <resources>
+        <image name="Brightness" width="64" height="64"/>
+        <image name="Contrast" width="64" height="64"/>
+        <image name="Exit" width="128" height="128"/>
+        <image name="Monitor Control Icon" width="256" height="256"/>
+        <image name="Settings" width="128" height="128"/>
+        <image name="Volume" width="64" height="64"/>
+    </resources>
+</document>
