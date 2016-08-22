@@ -15,7 +15,6 @@
 		5ED9189E1CEDFC2F002FEFB1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED9189C1CEDFC2F002FEFB1 /* MainMenu.xib */; };
 		5ED918A91CEDFC2F002FEFB1 /* MenuBarAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED918A81CEDFC2F002FEFB1 /* MenuBarAppTests.swift */; };
 		5ED918B41CEDFC2F002FEFB1 /* MenuBarAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED918B31CEDFC2F002FEFB1 /* MenuBarAppUITests.swift */; };
-		5EF7AE651D096A6300D21A9F /* dependencyInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF7AE641D096A6300D21A9F /* dependencyInstaller.swift */; };
 		5EF7CEC81CF4A0C200DD9737 /* displayViewControllerVertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF7CEC61CF4A0C200DD9737 /* displayViewControllerVertical.swift */; };
 		5EF7CEC91CF4A0C200DD9737 /* displayViewControllerVertical.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EF7CEC71CF4A0C200DD9737 /* displayViewControllerVertical.xib */; };
 		5EF7CED81CF4C26500DD9737 /* preferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF7CED61CF4C26500DD9737 /* preferencesViewController.swift */; };
@@ -54,7 +53,6 @@
 		5ED918AF1CEDFC2F002FEFB1 /* Display Control.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Display Control.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED918B31CEDFC2F002FEFB1 /* MenuBarAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarAppUITests.swift; sourceTree = "<group>"; };
 		5ED918B51CEDFC2F002FEFB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EF7AE641D096A6300D21A9F /* dependencyInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dependencyInstaller.swift; sourceTree = SOURCE_ROOT; };
 		5EF7CEC61CF4A0C200DD9737 /* displayViewControllerVertical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = displayViewControllerVertical.swift; path = ../displayViewControllerVertical.swift; sourceTree = "<group>"; };
 		5EF7CEC71CF4A0C200DD9737 /* displayViewControllerVertical.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = displayViewControllerVertical.xib; path = ../displayViewControllerVertical.xib; sourceTree = "<group>"; };
 		5EF7CED61CF4C26500DD9737 /* preferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = preferencesViewController.swift; path = ../preferencesViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				5ED918981CEDFC2F002FEFB1 /* AppDelegate.swift */,
-				5EF7AE641D096A6300D21A9F /* dependencyInstaller.swift */,
 				5ED9189A1CEDFC2F002FEFB1 /* Assets.xcassets */,
 				5ED9189C1CEDFC2F002FEFB1 /* MainMenu.xib */,
 				5ED9189F1CEDFC2F002FEFB1 /* Info.plist */,
@@ -277,7 +274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E4565351D63CF740063D049 /* displayViewControllerExtender.swift in Sources */,
-				5EF7AE651D096A6300D21A9F /* dependencyInstaller.swift in Sources */,
 				5ED918991CEDFC2F002FEFB1 /* AppDelegate.swift in Sources */,
 				5E0F67C81CEF43660057B4D6 /* displayViewController.swift in Sources */,
 				5EF7CEC81CF4A0C200DD9737 /* displayViewControllerVertical.swift in Sources */,

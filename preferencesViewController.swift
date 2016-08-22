@@ -15,8 +15,7 @@ class preferencesViewController: NSViewController {
     var lastKey = ""
     var lastKeyASCII = 0
     
-    @IBOutlet weak var horizontalPopover: NSButton!
-    
+    //UI Outlets
     @IBOutlet weak var brightnessDown: NSTextField!
     @IBOutlet weak var brightnessUp: NSTextField!
     @IBOutlet weak var contrastDown: NSTextField!
@@ -24,9 +23,11 @@ class preferencesViewController: NSViewController {
     @IBOutlet weak var volumeDown: NSTextField!
     @IBOutlet weak var volumeUp: NSTextField!
     
+    
+    @IBOutlet weak var verticalPopover: NSButton!
+    @IBOutlet weak var horizontalPopover: NSButton!
     @IBOutlet weak var disableHotkeys: NSButton!
     @IBOutlet weak var showPopoverOnHotkey: NSButton!
-    @IBOutlet weak var updateOnOpening: NSButton!
     
 
     override func viewDidLoad() {
@@ -35,7 +36,6 @@ class preferencesViewController: NSViewController {
         if appDelegate.userPreferences.boolForKey("horizontalOrientation") { horizontalPopover.state = 1 }
         if appDelegate.userPreferences.boolForKey("disableHotKeys") { disableHotkeys.state = 1 }
         if appDelegate.userPreferences.boolForKey("showPopoverOnHotkey") { showPopoverOnHotkey.state = 1 }
-        if appDelegate.userPreferences.boolForKey("updateOnOpening") { updateOnOpening.state = 1 }
         
         NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: {(evt: NSEvent!) -> NSEvent? in let key :UInt16 = evt.keyCode;
             self.lastKeyASCII = Int(key)
@@ -46,20 +46,8 @@ class preferencesViewController: NSViewController {
         self.updateViewConstraints()
     }
     
-    @IBAction func horizontalPopoverTicked(sender: NSButton) {
-        print(sender.state)
-        print(NSBundle.mainBundle().bundleURL.URLByDeletingLastPathComponent!.path!)
-        if sender.state == 0 { appDelegate.userPreferences.setBool(false, forKey: "horizontalOrientation") }
-        if sender.state == 1 { appDelegate.userPreferences.setBool(true, forKey: "horizontalOrientation") }
-    }
-    
-    //
-    
+    //UI Actions - Hotkey bindings
     @IBAction func brighnessDownKeyEntered(sender: NSTextField) {
-//        print(lastKeyASCII)
-//        print(lastKey)
-//        sender.stringValue = lastKey
-//        appDelegate.userPreferences.setInteger(lastKeyASCII, forKey: "brightnessDownKey")
     }
     
     @IBAction func brightnessUpKeyEntered(sender: NSTextField) {
@@ -76,8 +64,30 @@ class preferencesViewController: NSViewController {
     
     @IBAction func volumeUpKeyEntered(sender: NSTextField) {
     }
+
     
-    //
+    //UI Actions - Booleans
+    @IBAction func verticalPopoverTicked(sender: NSButton) {
+        horizontalPopover.state = 0
+        appDelegate.userPreferences.setBool(false, forKey: "horizontalOrientation")
+    }
+    
+    @IBAction func horizontalPopoverTicked(sender: NSButton) {
+        verticalPopover.state = 0
+        appDelegate.userPreferences.setBool(true, forKey: "horizontalOrientation")
+    }
+    
+    @IBAction func verticalPopoverImageTicked(sender: NSButton) {
+        verticalPopover.state = 1
+        horizontalPopover.state = 0
+        appDelegate.userPreferences.setBool(false, forKey: "horizontalOrientation")
+    }
+    
+    @IBAction func horizontalPopoverImageTicked(sender: NSButton) {
+        verticalPopover.state = 0
+        horizontalPopover.state = 1
+        appDelegate.userPreferences.setBool(true, forKey: "horizontalOrientation")
+    }
     
     @IBAction func disableHotkeysTicked(sender: NSButton) {
         if sender.state == 0 { appDelegate.userPreferences.setBool(false, forKey: "disableHotKeys") }
@@ -89,11 +99,8 @@ class preferencesViewController: NSViewController {
         else if sender.state == 1 { appDelegate.userPreferences.setBool(true, forKey: "showPopoverOnHotkey") }
     }
     
-    @IBAction func updateOnOpeningTicked(sender: AnyObject) {
-        if sender.state == 0 { appDelegate.userPreferences.setBool(false, forKey: "updateOnOpening") }
-        else if sender.state == 1 { appDelegate.userPreferences.setBool(true, forKey: "updateOnOpening") }
-    }
     
+    //UI Actions - Buttons
     @IBAction func quitButtonPressed(sender: NSButton) {
         exit(0)
     }

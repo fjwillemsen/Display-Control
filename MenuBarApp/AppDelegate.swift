@@ -14,13 +14,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
     let popover = NSPopover()
     var counter = 0
-//    var valueToRefresh = "all"
     let userPreferences = NSUserDefaults.standardUserDefaults()
     let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        
-//        dependencyInstaller().dependenciesInstalled() //checks if the required dependencies are installed (DDCCTL)
         
         if let button = statusItem.button {
             let icon = NSImage(named: "menuBarIcon")
@@ -35,8 +32,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             popover.contentViewController = displayViewControllerVertical(nibName: "displayViewControllerVertical", bundle: nil)
         }
-    
-//        if userPreferences.integerForKey("displayNumber") == 0 { userPreferences.setInteger(1, forKey: "displayNumber") }
         
         //Preferences to be reset to value at startup:
         userPreferences.setInteger(1, forKey: "displayNumber")
@@ -76,7 +71,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             acquirePrivilegesAlert.informativeText = "You'll be asked by your system to give Monitor Control privileges. We require it for you to take advantage of all its functionalities, like hotkeys."
             acquirePrivilegesAlert.alertStyle = NSAlertStyle.WarningAlertStyle
             acquirePrivilegesAlert.runModal()
-            print("This app requires additional privileges in order for it to fully function. Please allow it to.")
         }
         return accessEnabled == true
     }
@@ -134,6 +128,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             output = string.componentsSeparatedByString("\n")
         }
         task.waitUntilExit()
+        
         var substring = ""
         if output.count > line {
             substring = stringFromSubstring(output[line], leftString: leftString, rightString: rightString)
@@ -147,7 +142,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         counter = 0
-        print("Substring: ", substring)
         return substring
     }
     
@@ -177,23 +171,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
-//            self.valueToRefresh = type
-//            self.popover.contentViewController?.didChangeValueForKey(modifier)
-//            self.valueToRefresh = "all"
-            
             let task = NSTask()
             task.launchPath = "/usr/local/bin/ddcctl"
-            print("DisplayNumber in changeStatus ", self.userPreferences.integerForKey("displayNumber"))
             task.arguments = ["-c", "-d", String(self.userPreferences.integerForKey("displayNumber")), type, modifier]
             task.launch()
             task.waitUntilExit()
             dispatch_async(dispatch_get_main_queue()) {
-//                self.valueToRefresh = type
-//                self.popover.contentViewController?.viewDidLoad()
-//                self.popover.contentViewController?.objectDidEndEditing(modifier)
-//                self.popover.contentViewController?.didChangeValueForKey(type + " " + modifier)
                 self.refreshValues(type, modifier: modifier)
-//                self.valueToRefresh = "all"
             }
         }
         
@@ -203,41 +187,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func refreshValues(type: String, modifier: String?=nil) {
         
         let displayNumber = NSUserDefaults.standardUserDefaults().integerForKey("displayNumber")
-            
-//        if type == "all" or type == "-d" {
-//                print("ModelPicker RF: ", self.popover.contentViewController?.modelPickerGetter().itemTitles)
-//                refreshValues("-d")
-//                print("HW")
-////                print("ModelPicker RF: ", self.popover.contentViewController?.modelPickerGetter().itemTitles)
-//                refreshValues("-n")
-//                print("BW")
-////                print("ModelPicker RF: ", self.popover.contentViewController?.modelPickerGetter().itemTitles)
-//                refreshValues("-b")
-////                print("ModelPicker RF: ", self.popover.contentViewController?.modelPickerGetter().itemTitles)
-//                refreshValues("-c")
-////                print("ModelPicker RF: ", self.popover.contentViewController?.modelPickerGetter().itemTitles)
-//                refreshValues("-v")
         
         if type == "all" || type == "-d" { //Refreshes the display list
-//            let newModelPicker = NSPopUpButton()
             var stringArray = [String]()
-//            newModelPicker.removeAllItems()
             for i in 0 ..< getNumberOfDisplays() {
                 stringArray.append(getStatus("", line: 2+getNumberOfDisplays(), display: i+1, leftString: "got edid.name: ", rightString: "null"))
-//                newModelPicker.addItemWithTitle(getStatus("", line: 2+getNumberOfDisplays(), display: i+1, leftString: "got edid.name: ", rightString: "null"))
             }
             self.popover.contentViewController?.modelPickerModifier(stringArray)
-//            newModelPicker.addItemWithTitle("Hello world")
-//            print("ModelPicker ", self.popover.contentViewController?.modelPickerGetter())
-//            self.popover.contentViewController?.modelPickerSetter(newModelPicker)
-//            print("ModelPicker ", self.popover.contentViewController?.modelPickerGetter())
-//            print("CVC ", self.popover.contentViewController)
-//            refreshValues("-n")
         }
 
         if type == "all" || type == "-n" { //Refreshes the display name
-            print("ModelPicker -N")
-            print(self.popover.contentViewController?.modelPickerGetter())
             let modelName = getStatus("", line: 2+getNumberOfDisplays(), display: displayNumber, leftString: "got edid.name: ", rightString: "null")
             if modelName == "Color LCD"{
                 let noDisplayAlert : NSAlert = NSAlert()
@@ -266,21 +225,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if type == "all" || type == "-b" { //Refreshes the brightness value
             if let newValue = Int(getStatus("-b", line: 7+getNumberOfDisplays(), display: displayNumber, leftString: "current: ", rightString: ", max:")) {
-                print("New Value: ", newValue)
                 self.popover.contentViewController?.brightnessSliderSetter(newValue)
             }
         }
         
         if type == "all" || type == "-c"{ //Refreshes the contrast value
             if let newValue = Int(getStatus("-c", line: 7+getNumberOfDisplays(), display: displayNumber, leftString: "current: ", rightString: ", max:")) {
-                print("New Value: ", newValue)
                 self.popover.contentViewController?.contrastSliderSetter(newValue)
             }
         }
         
         if type == "all" || type == "-v" { //Refreshes the volume value
             if let newValue = Int(getStatus("-v", line: 7+getNumberOfDisplays(), display: displayNumber, leftString: "current: ", rightString: ", max:")) {
-                print("New Value: ", newValue)
                 self.popover.contentViewController?.volumeSliderSetter(newValue)
             }
         }
