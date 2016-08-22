@@ -36,7 +36,7 @@
                 </textField>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1gu-i5-aAX">
                     <rect key="frame" x="18" y="364" width="138" height="18"/>
-                    <buttonCell key="cell" type="check" title="Vertical Popover" alternateTitle="Horizontal Popover" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ILQ-OG-aNA">
+                    <buttonCell key="cell" type="check" title="Horizontal Popover" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ILQ-OG-aNA">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -123,7 +123,7 @@
                 </box>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-ro-oCH">
                     <rect key="frame" x="18" y="106" width="266" height="18"/>
-                    <buttonCell key="cell" type="check" title="Hotkeys enabled" bezelStyle="regularSquare" imagePosition="left" inset="2" id="d9Q-ED-uJx">
+                    <buttonCell key="cell" type="check" title="Hotkeys" bezelStyle="regularSquare" imagePosition="left" inset="2" id="d9Q-ED-uJx">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>

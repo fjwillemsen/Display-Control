@@ -14,8 +14,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
     let popover = NSPopover()
     var counter = 0
-    var valueToRefresh = "all"
+//    var valueToRefresh = "all"
     let userPreferences = NSUserDefaults.standardUserDefaults()
+    let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
@@ -36,7 +37,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     
 //        if userPreferences.integerForKey("displayNumber") == 0 { userPreferences.setInteger(1, forKey: "displayNumber") }
+        
+        //Preferences to be reset to value at startup:
         userPreferences.setInteger(1, forKey: "displayNumber")
+        userPreferences.setBool(true, forKey: "updateOnOpening")
         
         acquirePrivileges()
         NSEvent.addGlobalMonitorForEventsMatchingMask(NSEventMask.LeftMouseUpMask, handler: closePopover)
@@ -55,6 +59,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 if Int(key) == self.userPreferences.integerForKey("volumeUpKey") { self.changeStatus("-v", modifier: "10+"); } //F6, volume up
             });
         }
+        
+        self.popover.contentViewController?.viewDidLoad()
+        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+            self.refreshValues("all")
+        }
     }
     
     func acquirePrivileges() -> Bool {
@@ -64,7 +73,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if accessEnabled != true {
             let acquirePrivilegesAlert : NSAlert = NSAlert()
             acquirePrivilegesAlert.messageText = "Don't worry..."
-            acquirePrivilegesAlert.informativeText = "You'll be asked by your system to give Monitor Control privileges. We require it for you to take advantage of all its functionalities, like hotkeys. Thanks in advance!"
+            acquirePrivilegesAlert.informativeText = "You'll be asked by your system to give Monitor Control privileges. We require it for you to take advantage of all its functionalities, like hotkeys."
             acquirePrivilegesAlert.alertStyle = NSAlertStyle.WarningAlertStyle
             acquirePrivilegesAlert.runModal()
             print("This app requires additional privileges in order for it to fully function. Please allow it to.")
@@ -88,7 +97,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             showPopover(sender)
             if userPreferences.boolForKey("updateOnOpening") {
-                self.popover.contentViewController?.viewWillAppear()
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                    self.refreshValues("all")
+                }
             }
         }
     }
@@ -177,28 +188,101 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             task.launch()
             task.waitUntilExit()
             dispatch_async(dispatch_get_main_queue()) {
-                self.valueToRefresh = type
+//                self.valueToRefresh = type
 //                self.popover.contentViewController?.viewDidLoad()
 //                self.popover.contentViewController?.objectDidEndEditing(modifier)
-                self.popover.contentViewController?.didChangeValueForKey(type + " " + modifier)
-                self.valueToRefresh = "all"
+//                self.popover.contentViewController?.didChangeValueForKey(type + " " + modifier)
+                self.refreshValues(type, modifier: modifier)
+//                self.valueToRefresh = "all"
             }
         }
         
         if userPreferences.boolForKey("showPopoverOnHotkey") { showPopover(statusItem.button) }
     }
     
-    func refreshValues(type: String, modifier: String) {
+    func refreshValues(type: String, modifier: String?=nil) {
         
-        switch type {
-        case "all", "-b":
-            popover.contentViewController
-        case "all", "-c":
-            contrastSlider.integerValue = contrastSlider.integerValue + modifier
-        case "all", "-v":
-            volumeSlider.integerValue = volumeSlider.integerValue + modifier
-        default:
-            print("No Case, type: ", type, " modifier: ", modifier)
+        let displayNumber = NSUserDefaults.standardUserDefaults().integerForKey("displayNumber")
+            
+//        if type == "all" or type == "-d" {
+//                print("ModelPicker RF: ", self.popover.contentViewController?.modelPickerGetter().itemTitles)
+//                refreshValues("-d")
+//                print("HW")
+////                print("ModelPicker RF: ", self.popover.contentViewController?.modelPickerGetter().itemTitles)
+//                refreshValues("-n")
+//                print("BW")
+////                print("ModelPicker RF: ", self.popover.contentViewController?.modelPickerGetter().itemTitles)
+//                refreshValues("-b")
+////                print("ModelPicker RF: ", self.popover.contentViewController?.modelPickerGetter().itemTitles)
+//                refreshValues("-c")
+////                print("ModelPicker RF: ", self.popover.contentViewController?.modelPickerGetter().itemTitles)
+//                refreshValues("-v")
+        
+        if type == "all" || type == "-d" { //Refreshes the display list
+//            let newModelPicker = NSPopUpButton()
+            var stringArray = [String]()
+//            newModelPicker.removeAllItems()
+            for i in 0 ..< getNumberOfDisplays() {
+                stringArray.append(getStatus("", line: 2+getNumberOfDisplays(), display: i+1, leftString: "got edid.name: ", rightString: "null"))
+//                newModelPicker.addItemWithTitle(getStatus("", line: 2+getNumberOfDisplays(), display: i+1, leftString: "got edid.name: ", rightString: "null"))
+            }
+            self.popover.contentViewController?.modelPickerModifier(stringArray)
+//            newModelPicker.addItemWithTitle("Hello world")
+//            print("ModelPicker ", self.popover.contentViewController?.modelPickerGetter())
+//            self.popover.contentViewController?.modelPickerSetter(newModelPicker)
+//            print("ModelPicker ", self.popover.contentViewController?.modelPickerGetter())
+//            print("CVC ", self.popover.contentViewController)
+//            refreshValues("-n")
+        }
+
+        if type == "all" || type == "-n" { //Refreshes the display name
+            print("ModelPicker -N")
+            print(self.popover.contentViewController?.modelPickerGetter())
+            let modelName = getStatus("", line: 2+getNumberOfDisplays(), display: displayNumber, leftString: "got edid.name: ", rightString: "null")
+            if modelName == "Color LCD"{
+                let noDisplayAlert : NSAlert = NSAlert()
+                if displayNumber < getNumberOfDisplays() {
+                    NSUserDefaults.standardUserDefaults().setInteger(displayNumber+1, forKey: "displayNumber")
+                    noDisplayAlert.messageText = "Oops, that won't work..."
+                    noDisplayAlert.informativeText = "Your built-in screen was set as the preffered display. Monitor Control is meant for non-Apple displays. Don't worry, we've set the prefference to a non-Apple display."
+                    noDisplayAlert.alertStyle = NSAlertStyle.WarningAlertStyle
+                    noDisplayAlert.runModal()
+                    self.refreshValues(type, modifier: "all")
+                    return
+                }
+                else {
+                    noDisplayAlert.messageText = "We couldn't find a monitor..."
+                    noDisplayAlert.informativeText = "No external display has been connected. Connect a display and try again. Monitor Control will now exit."
+                    noDisplayAlert.alertStyle = NSAlertStyle.WarningAlertStyle
+                    noDisplayAlert.runModal()
+                    exit(0)
+                }
+            } else if modelName != "error" {
+                self.popover.contentViewController?.popUpButtonSelectTitle(modelName)
+            } else {
+                self.popover.contentViewController?.popUpButtonSelectIndex(0)
+            }
+        }
+        
+        if type == "all" || type == "-b" { //Refreshes the brightness value
+            if let newValue = Int(getStatus("-b", line: 7+getNumberOfDisplays(), display: displayNumber, leftString: "current: ", rightString: ", max:")) {
+                print("New Value: ", newValue)
+                self.popover.contentViewController?.brightnessSliderSetter(newValue)
+            }
+        }
+        
+        if type == "all" || type == "-c"{ //Refreshes the contrast value
+            if let newValue = Int(getStatus("-c", line: 7+getNumberOfDisplays(), display: displayNumber, leftString: "current: ", rightString: ", max:")) {
+                print("New Value: ", newValue)
+                self.popover.contentViewController?.contrastSliderSetter(newValue)
+            }
+        }
+        
+        if type == "all" || type == "-v" { //Refreshes the volume value
+            if let newValue = Int(getStatus("-v", line: 7+getNumberOfDisplays(), display: displayNumber, leftString: "current: ", rightString: ", max:")) {
+                print("New Value: ", newValue)
+                self.popover.contentViewController?.volumeSliderSetter(newValue)
+            }
         }
         
     }

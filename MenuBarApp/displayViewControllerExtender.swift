@@ -10,6 +10,7 @@ import Cocoa
 
 extension NSViewController {
     
+    //Getters
     func brightnessSliderGetter()-> Int {
         return 0
     }
@@ -22,7 +23,11 @@ extension NSViewController {
         return 0
     }
     
+    func modelPickerGetter()-> NSPopUpButton {
+        return NSPopUpButton()
+    }
     
+    //Setters
     func brightnessSliderSetter(value: Int) {
     }
     
@@ -32,7 +37,10 @@ extension NSViewController {
     func volumeSliderSetter(value: Int) {
     }
     
+    func modelPickerSetter(value: NSPopUpButton) {
+    }
     
+    //Modifiers
     func brightnessSliderModifier(value: Int) {
     }
     
@@ -40,5 +48,15 @@ extension NSViewController {
     }
     
     func volumeSliderModifier(value: Int) {
+    }
+    
+    func modelPickerModifier(value: [String]) {
+    }
+    
+    //Selectors
+    func popUpButtonSelectTitle(value: String) {
+    }
+
+    func popUpButtonSelectIndex(value: Int) {
     }
 }

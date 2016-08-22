@@ -87,12 +87,12 @@
                 </button>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OUi-Ha-4OA">
                     <rect key="frame" x="114" y="133" width="185" height="26"/>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="gmJ-VP-NSK" id="CIs-lH-dI8">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CIs-lH-dI8">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="kV4-Hm-dpR">
                             <items>
-                                <menuItem state="on" id="gmJ-VP-NSK"/>
+                                <menuItem title="Item 1" id="gmJ-VP-NSK"/>
                                 <menuItem title="Item 2" id="hzr-UR-AcM"/>
                                 <menuItem title="Item 3" id="CLT-99-Nce"/>
                             </items>
